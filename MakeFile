@@ -1,0 +1,20 @@
+.PHONY: up down frontend backend logs dev clean stash
+
+up:
+	docker-compose -f docker-compose.dev.yml up -d
+down:
+	docker-compose -f docker-compose.dev.yml down
+frontend:
+	cd frontend && npm run dev
+backend:
+	cd backend && python main.py
+logs:
+	docker-compose -f docker-compose.dev.yml logs -f
+dev: 
+	docker-compose up 
+clean:
+	docker-compose down -v
+
+stash:
+	git add .
+	git stash push
