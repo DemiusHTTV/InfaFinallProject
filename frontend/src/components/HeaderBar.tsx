@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { RequestModal } from "./popup";
-
+import'../styles/Header.style.css';
+import '../styles/popup.style.css';
+import '../styles/global.style.css';
 function HeaderBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -24,9 +26,10 @@ function HeaderBar() {
           className="header-btn"
           onClick={() => setIsModalOpen(true)}
         >
-          Оставить заявку
+           Войти
         </button>
       </div>
+      
 
       {isModalOpen && (
         <RequestModal onClose={() => setIsModalOpen(false)} />
