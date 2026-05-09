@@ -1,0 +1,79 @@
+.hero {
+  height: 100vh;
+
+  background-image: url("/hero-car.jpg");
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.65);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 72px;
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  margin-top: 24px;
+
+  max-width: 600px;
+
+  color: var(--text-secondary);
+
+  font-size: 20px;
+
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  margin-top: 36px;
+
+  display: flex;
+  gap: 16px;
+}
+
+.hero-primary,
+.hero-secondary {
+  padding: 16px 28px;
+
+  border-radius: 40px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.hero-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.hero-secondary {
+  background: transparent;
+
+  border: 1px solid var(--accent);
+
+  color: var(--accent);
+}
