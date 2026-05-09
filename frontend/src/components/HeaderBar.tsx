@@ -1,39 +1,51 @@
-import { useState } from "react";
-import { RequestModal } from "./popup";
-import'../styles/Header.style.css';
-import '../styles/popup.style.css';
-import '../styles/global.style.css';
+import { Link } from "react-router-dom";
+
+import "../../styles/header.css";
+
 function HeaderBar() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <header className="header-bar">
-      <div className="header-bar_left">
-        <div className="logo">CAR - UNICH</div>
+    <header className="header">
+
+      <div className="container header-container">
+
+        <div className="logo">
+          CAR - UNICH
+        </div>
+
+        <nav className="nav">
+
+          <a href="#">Главная</a>
+
+          <a href="#">Услуги</a>
+
+          <a href="#">Авто</a>
+
+          <a href="#">Мастера</a>
+
+          <a href="#">Контакты</a>
+
+        </nav>
+
+        <div className="header-actions">
+
+          <Link
+            to="/login"
+            className="login-button"
+          >
+            Войти
+          </Link>
+
+          <Link
+            to="/register"
+            className="register-button"
+          >
+            Регистрация
+          </Link>
+
+        </div>
+
       </div>
 
-      <nav className="header-bar_nav">
-        <a href="#">Главная</a>
-        <a href="#">О нас</a>
-        <a href="#">Как работаем</a>
-        <a href="#">Каталог авто</a>
-        <a href="#">Вопросы</a>
-        <a href="#">Новости</a>
-      </nav>
-
-      <div className="header-bar_right">
-        <button
-          className="header-btn"
-          onClick={() => setIsModalOpen(true)}
-        >
-           Войти
-        </button>
-      </div>
-      
-
-      {isModalOpen && (
-        <RequestModal onClose={() => setIsModalOpen(false)} />
-      )}
     </header>
   );
 }
